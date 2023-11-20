@@ -22,6 +22,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="👊">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rockButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Yi-Pa-Jyh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXC-QG-vI2">
                                 <rect key="frame" x="147" y="368.66666666666669" width="99" height="115"/>
@@ -29,6 +32,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="✋">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="paperButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNa-tB-TXB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEF-ri-UqC">
                                 <rect key="frame" x="278" y="368.66666666666669" width="99" height="115"/>
@@ -36,6 +42,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="✌️">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="scissorsButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydJ-SV-HTu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B1-tv-6dg">
                                 <rect key="frame" x="121" y="598" width="151" height="48"/>
@@ -43,6 +52,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Play Again">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="playAgainButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S37-z0-IVv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEt-S7-HqC">
                                 <rect key="frame" x="115" y="115" width="163" height="83.666666666666686"/>
@@ -91,11 +103,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="computerSign" destination="hEt-S7-HqC" id="V2e-Bn-qeZ"/>
-                        <outlet property="paper" destination="cXC-QG-vI2" id="FX5-sb-jIV"/>
-                        <outlet property="playAgain" destination="2B1-tv-6dg" id="Jhv-V9-pE8"/>
-                        <outlet property="rock" destination="uu2-HE-rQd" id="HXT-ad-810"/>
-                        <outlet property="scissors" destination="MEF-ri-UqC" id="7VB-kt-0YD"/>
+                        <outlet property="computerLabel" destination="hEt-S7-HqC" id="V2e-Bn-qeZ"/>
+                        <outlet property="paperButton" destination="cXC-QG-vI2" id="FX5-sb-jIV"/>
+                        <outlet property="playAgainButton" destination="2B1-tv-6dg" id="Jhv-V9-pE8"/>
+                        <outlet property="rockButton" destination="uu2-HE-rQd" id="HXT-ad-810"/>
+                        <outlet property="scissorsButton" destination="MEF-ri-UqC" id="7VB-kt-0YD"/>
                         <outlet property="statusLabel" destination="cIX-RF-jKm" id="7zp-PH-zp3"/>
                     </connections>
                 </viewController>
