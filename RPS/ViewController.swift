@@ -8,13 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var gameState: GameState = .start
 
     @IBOutlet weak var statusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        statusLabel.text = "Choose your weapon!"
+        statusLabel.text = gameState.message
     }
 
 
