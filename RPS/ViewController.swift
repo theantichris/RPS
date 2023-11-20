@@ -15,20 +15,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        statusLabel.text = gameState.message
-        view.backgroundColor = backgroundColor()
+        updateGame()
     }
-
-    func backgroundColor() -> UIColor {
+    
+    func updateGame() {
         switch gameState {
+        case .start:
+            view.backgroundColor = UIColor.white
+            statusLabel.text = gameState.message
         case .win:
-            return UIColor.green
+            view.backgroundColor = UIColor.green
         case .lose:
-            return UIColor.red
+            view.backgroundColor = UIColor.red
         case .draw:
-            return UIColor.yellow
-        default:
-            return UIColor.white
+            view.backgroundColor = UIColor.yellow
         }
     }
 }
