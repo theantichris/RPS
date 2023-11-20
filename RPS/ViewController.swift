@@ -16,8 +16,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         statusLabel.text = gameState.message
+        view.backgroundColor = backgroundColor()
     }
 
-
+    func backgroundColor() -> UIColor {
+        switch gameState {
+        case .win:
+            return UIColor.green
+        case .lose:
+            return UIColor.red
+        case .draw:
+            return UIColor.yellow
+        default:
+            return UIColor.white
+        }
+    }
 }
 
