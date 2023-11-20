@@ -91,6 +91,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="computerSign" destination="hEt-S7-HqC" id="V2e-Bn-qeZ"/>
+                        <outlet property="paper" destination="cXC-QG-vI2" id="FX5-sb-jIV"/>
+                        <outlet property="playAgain" destination="2B1-tv-6dg" id="Jhv-V9-pE8"/>
+                        <outlet property="rock" destination="uu2-HE-rQd" id="HXT-ad-810"/>
+                        <outlet property="scissors" destination="MEF-ri-UqC" id="7VB-kt-0YD"/>
                         <outlet property="statusLabel" destination="cIX-RF-jKm" id="7zp-PH-zp3"/>
                     </connections>
                 </viewController>
