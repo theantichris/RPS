@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var gameState: GameState = .start
+    var results: GameState = .start
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var computerLabel: UILabel!
@@ -41,11 +41,11 @@ class ViewController: UIViewController {
     }
     
     func startGame() {
-        gameState = .start
+        results = .start
         
         computerLabel.text = "🤖"
-        statusLabel.text = gameState.message
-        view.backgroundColor = gameState.backgroundColor
+        statusLabel.text = results.message
+        view.backgroundColor = results.backgroundColor
         
         playAgainButton.isEnabled = false
         playAgainButton.isHidden = true
@@ -64,10 +64,10 @@ class ViewController: UIViewController {
         let computersSign = randomSign()
         computerLabel.text = computersSign.emoji
         
-        gameState = usersSign.gameResults(for: computersSign)
+        results = usersSign.gameResults(for: computersSign)
         
-        statusLabel.text = gameState.message
-        view.backgroundColor = gameState.backgroundColor
+        statusLabel.text = results.message
+        view.backgroundColor = results.backgroundColor
         
         rockButton.isEnabled = false
         paperButton.isEnabled = false
