@@ -64,16 +64,8 @@ class ViewController: UIViewController {
     }
     
     func updateGame() {
-        if gameState == .win {
-            view.backgroundColor = UIColor.green
-            statusLabel.text = gameState.message
-        } else if gameState == .lose {
-            view.backgroundColor = UIColor.red
-            statusLabel.text = gameState.message
-        } else {
-            view.backgroundColor = UIColor.yellow
-            statusLabel.text = gameState.message
-        }
+        statusLabel.text = gameState.message
+        view.backgroundColor = gameState.backgroundColor
     }
     
     func play(usersSign: Sign) {

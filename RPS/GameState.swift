@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum GameState {
     case start, win, lose, draw
@@ -20,6 +21,19 @@ enum GameState {
             return "It's a draw!"
         default:
             return "Choose your weapon!"
+        }
+    }
+    
+    var backgroundColor: UIColor {
+        switch self{
+        case .win:
+            return UIColor.green
+        case .lose:
+            return UIColor.red
+        case .draw:
+            return UIColor.yellow
+        default:
+            return UIColor.white
         }
     }
 }
