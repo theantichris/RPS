@@ -34,41 +34,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgainButtonClicked(_ sender: Any) {
-        gameState = .start
-        updateGame()
+        startGame()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateGame()
+        startGame()
+    }
+    
+    fileprivate func startGame() {
+        gameState = .start
+        
+        view.backgroundColor = UIColor.white
+        computerLabel.text = "🤖"
+        statusLabel.text = gameState.message
+        
+        playAgainButton.isEnabled = false
+        playAgainButton.isHidden = true
+        
+        rockButton.isHidden = false
+        rockButton.isEnabled = true
+        
+        paperButton.isHidden = false
+        paperButton.isEnabled = true
+        
+        scissorsButton.isHidden = false
+        scissorsButton.isEnabled = true
     }
     
     func updateGame() {
-        switch gameState {
-        case .start:
-            view.backgroundColor = UIColor.white
-            computerLabel.text = "🤖"
-            statusLabel.text = gameState.message
-            
-            playAgainButton.isEnabled = false
-            playAgainButton.isHidden = true
-            
-            rockButton.isHidden = false
-            rockButton.isEnabled = true
-            
-            paperButton.isHidden = false
-            paperButton.isEnabled = true
-            
-            scissorsButton.isHidden = false
-            scissorsButton.isEnabled = true
-        case .win:
+        if gameState == .win {
             view.backgroundColor = UIColor.green
             statusLabel.text = gameState.message
-        case .lose:
+        } else if gameState == .lose {
             view.backgroundColor = UIColor.red
             statusLabel.text = gameState.message
-        case .draw:
+        } else {
             view.backgroundColor = UIColor.yellow
             statusLabel.text = gameState.message
         }
