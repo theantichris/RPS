@@ -20,17 +20,14 @@ class ViewController: UIViewController {
     
     @IBAction func rockButtonClicked(_ sender: Any) {
         play(usersSign: .rock)
-        updateGame()
     }
     
     @IBAction func paperButtonClicked(_ sender: Any) {
         play(usersSign: .paper)
-        updateGame()
     }
     
     @IBAction func scissorsButtonClicked(_ sender: Any) {
         play(usersSign: .scissors)
-        updateGame()
     }
     
     @IBAction func playAgainButtonClicked(_ sender: Any) {
@@ -43,12 +40,12 @@ class ViewController: UIViewController {
         startGame()
     }
     
-    fileprivate func startGame() {
+    func startGame() {
         gameState = .start
         
-        view.backgroundColor = UIColor.white
         computerLabel.text = "🤖"
         statusLabel.text = gameState.message
+        view.backgroundColor = gameState.backgroundColor
         
         playAgainButton.isEnabled = false
         playAgainButton.isHidden = true
@@ -63,16 +60,14 @@ class ViewController: UIViewController {
         scissorsButton.isEnabled = true
     }
     
-    func updateGame() {
-        statusLabel.text = gameState.message
-        view.backgroundColor = gameState.backgroundColor
-    }
-    
     func play(usersSign: Sign) {
         let computersSign = randomSign()
         computerLabel.text = computersSign.emoji
         
         gameState = usersSign.gameResults(for: computersSign)
+        
+        statusLabel.text = gameState.message
+        view.backgroundColor = gameState.backgroundColor
         
         rockButton.isEnabled = false
         paperButton.isEnabled = false
